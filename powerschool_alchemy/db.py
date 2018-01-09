@@ -1,0 +1,21 @@
+from sqlalchemy import create_engine
+from sqlalchemy.engine.url import URL
+from sqlalchemy.orm import sessionmaker, Session
+from pprint import pprint
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
+def create_session() -> Session:
+    connect_str = URL(**{
+        'drivername': 'oracle',
+        "username": os.environ.get('POWERSCHOOL_USER'),
+        "password": os.environ.get('POWERSCHOOL_PASSWORD'),
+        "host": os.environ.get('POWERSCHOOL_HOST'),
+        "port": os.environ.get('POWERSCHOOL_PORT', '1521'),
+        "database": os.environ.get('POWERSCHOOL_DATABASE')
+    })
+    engine = create_engine(connect_str)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session
