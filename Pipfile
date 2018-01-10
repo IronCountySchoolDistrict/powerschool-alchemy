@@ -10,7 +10,6 @@ name = "pypi"
 cx-oracle = "*"
 sqlalchemy = "*"
 python-dotenv = "*"
-"e1839a8" = {path = ".", editable = true}
 
 
 [dev-packages]
