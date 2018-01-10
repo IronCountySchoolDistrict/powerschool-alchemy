@@ -1,13 +1,13 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='powerschool_alchemy',
-      version='0.0.2',
+      version='0.0.5',
       description='This library allows you to interact with a PowerSchool Database with SQLALchemy, a Python ORM',
       url='https://github.com/IronCountySchoolDistrict/powerschool-alchemy',
       author='Iron County School District',
       author_email='data@ironmail.org',
       license='MIT',
-      packages=['powerschool_alchemy'],
+      packages=find_packages(),
       install_requires=[
           'python-dotenv',
           'SQLAlchemy',
