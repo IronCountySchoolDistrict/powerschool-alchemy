@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from pprint import pprint
 from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv())
+load_dotenv(find_dotenv(usecwd=True))
 
 def create_session() -> Session:
     connect_str = URL(**{
