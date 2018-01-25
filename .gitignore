@@ -1,6 +1,7 @@
 dist/
 build/
 __pycache__/
-.env
+.idea/
 .vscode/
 *.egg-info/
+.env
