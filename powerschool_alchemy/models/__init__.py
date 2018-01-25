@@ -12,6 +12,7 @@ from .Student import Student
 from .StudentCoreField import StudentCoreField
 from .StudentTest import StudentTest
 from .StudentTestScore import StudentTestScore
+from .Teacher import Teacher
 from .Term import Term
 from .Test import Test
 from .TestScore import TestScore
