@@ -1,12 +1,10 @@
 from pprint import pformat
 
-from sqlalchemy import (Boolean, Column, Date, Float, ForeignKey,
-                        ForeignKeyConstraint, Integer, MetaData, String, Table)
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import (Column, Date, ForeignKeyConstraint, Integer, String)
 from sqlalchemy.orm import relationship
 
-from .Term import Term
 from .base import Base
+
 
 class CC(Base):
     __tablename__ = 'cc'

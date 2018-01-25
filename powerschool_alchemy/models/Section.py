@@ -1,14 +1,10 @@
 from pprint import pformat
 
-from sqlalchemy import (Boolean, Column, Date, Float, ForeignKey,
-                        ForeignKeyConstraint, Integer, MetaData, String, Table)
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import (Column, ForeignKeyConstraint, Integer, String)
 from sqlalchemy.orm import relationship
 
-from .Term import Term
-from .Course import Course
-from .School import School
 from .base import Base
+
 
 class Section(Base):
     __tablename__ = 'sections'

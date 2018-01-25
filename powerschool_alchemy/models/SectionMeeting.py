@@ -1,11 +1,10 @@
 from pprint import pformat
 
-from sqlalchemy import (Boolean, Column, Date, Float, ForeignKey,
-                        ForeignKeyConstraint, Integer, MetaData, String, Table)
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import (Column, ForeignKeyConstraint, Integer, String)
 from sqlalchemy.orm import relationship
 
 from .base import Base
+
 
 class SectionMeeting(Base):
     __tablename__ = 'section_meeting'

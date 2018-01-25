@@ -1,15 +1,13 @@
 from pprint import pformat
 
-from sqlalchemy import (Boolean, Column, Date, Float, ForeignKey,
-                        ForeignKeyConstraint, Integer, MetaData, String, Table)
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import (Column, Integer, String)
 from sqlalchemy.orm import relationship
 from .base import Base
 
 
 class StudentCoreField(Base):
     __tablename__ = 'studentcorefields'
-    
+
     student_dcid = Column('studentsdcid', Integer, primary_key=True)
     student = relationship('Student', back_populates='core_fields')
     father_home_phone = Column(String(length=4000))

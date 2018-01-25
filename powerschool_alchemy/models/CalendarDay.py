@@ -1,14 +1,17 @@
 from pprint import pformat
-from sqlalchemy import (Boolean, Column, Date, Float, ForeignKey,
-                        ForeignKeyConstraint, Integer, MetaData, String, Table)
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy import (Boolean, ForeignKeyConstraint, Column, Date, Integer)
 
 from .base import Base
 
 
 class CalendarDay(Base):
     __tablename__ = 'calendar_day'
+    __table_args__ = (
+        ForeignKeyConstraint(
+            ['schoolid'],
+            ['schools.school_number']
+        ),
+    )
 
     id = Column(Integer)
     dcid = Column(Integer, primary_key=True)

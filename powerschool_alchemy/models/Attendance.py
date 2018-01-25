@@ -1,15 +1,10 @@
 from pprint import pformat
 
-from sqlalchemy import (Boolean, Column, Date, Float, ForeignKey,
-                        ForeignKeyConstraint, Integer, MetaData, String, Table)
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import (Column, Date, ForeignKeyConstraint, Integer, String)
 from sqlalchemy.orm import relationship
 
-from .CC import CC
-from .Student import Student
-from .AttendanceCode import AttendanceCode
-from .Period import Period
 from .base import Base
+
 
 class Attendance(Base):
     __tablename__ = 'attendance'
