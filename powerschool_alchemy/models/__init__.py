@@ -6,6 +6,7 @@ from .CC import CC
 from .Course import Course
 from .Period import Period
 from .School import School
+from .SchoolCourse import SchoolCourse
 from .Section import Section
 from .SectionMeeting import SectionMeeting
 from .Student import Student
