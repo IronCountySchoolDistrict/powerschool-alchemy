@@ -1,5 +1,6 @@
 from pprint import pformat
 from sqlalchemy import (Boolean, ForeignKeyConstraint, Column, Date, Integer)
+from sqlalchemy.orm import relationship
 
 from .base import Base
 
@@ -18,6 +19,8 @@ class CalendarDay(Base):
     date_value = Column(Date)
     school_id = Column('schoolid', Integer)
     in_session = Column('insession', Boolean)
+
+    school = relationship('School')
 
     def __repr__(self):
             return 'CalendarDay: ' + pformat(vars(self))
