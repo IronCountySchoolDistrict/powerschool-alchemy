@@ -31,6 +31,7 @@ class Student(Base):
     gender = Column(String)
     state_studentnumber = Column(String(length=32))
     entry_date = Column('entrydate', Date)
+    exit_date = Column('exitdate', Date)
     father = Column(String)
     mother = Column(String)
     home_phone = Column(String)
