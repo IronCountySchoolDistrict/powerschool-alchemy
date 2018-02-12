@@ -11,6 +11,7 @@ class School(Base):
     id = Column(Integer, unique=True)
     name = Column(String)
     school_number = Column(String, unique=True)
+    abbreviation = Column(String)
     
     def __repr__(self):
         return 'School: ' + pformat(vars(self))
