@@ -32,6 +32,7 @@ class Section(Base):
     school_id = Column('schoolid', Integer)
     school = relationship('School', viewonly=True)
     teacher_id = Column('teacher', Integer)
+    external_expression = Column(String)
 
     def __repr__(self):
         return 'Section: ' + pformat(vars(self))
