@@ -28,6 +28,11 @@ class CC(Base):
     student_id = Column('studentid', Integer)
     student = relationship('Student')
     section_id = Column('sectionid', Integer)
+    # The CC.section_id value is negated when a student drops the course
+    # primaryjoin here checks for sectionids that were negated
+    section = relationship('Section', viewonly=True, primaryjoin="and_("
+                                                                "or_(Section.id==CC.section_id, Section.id==-CC.section_id), "
+                                                                "Term.school_id==CC.school_id)")
     course_number = Column(String)
     date_enrolled = Column('dateenrolled', Date)
     date_left = Column('dateleft', Date)
