@@ -34,7 +34,11 @@ class CC(Base):
     school_id = Column('schoolid', Integer)
     school = relationship('School')
     term_id = Column('termid', Integer)
-    term = relationship('Term', viewonly=True)
+    # The CC.term_id value is negated when a student drops the course
+    # primaryjoin here checks for termids that were negated
+    term = relationship('Term', viewonly=True, primaryjoin="and_("
+                                                                "or_(Term.id==CC.term_id, Term.id==-CC.term_id), "
+                                                                "Term.school_id==CC.school_id)")
     current_absences = Column('currentabsences', Integer)
     current_tardies = Column('currenttardies', Integer)
     teacher_id = Column('teacherid', Integer)
