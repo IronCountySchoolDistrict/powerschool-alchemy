@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='powerschool_alchemy',
-      version='0.0.10',
+      version='0.0.11',
       description='This library allows you to interact with a PowerSchool Database with SQLALchemy, a Python ORM',
       url='https://github.com/IronCountySchoolDistrict/powerschool-alchemy',
       author='Iron County School District',
