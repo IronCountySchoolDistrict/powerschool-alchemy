@@ -33,6 +33,8 @@ class Section(Base):
     school = relationship('School', viewonly=True)
     teacher_id = Column('teacher', Integer)
     external_expression = Column(String)
+    section_meetings = relationship(
+        'SectionMeeting', back_populates='section')
 
     def __repr__(self):
         return 'Section: ' + pformat(vars(self))

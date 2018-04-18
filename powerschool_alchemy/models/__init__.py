@@ -4,6 +4,7 @@ from .CalendarDay import CalendarDay
 from .Course import Course
 from .CC import CC
 from .Course import Course
+from .CycleDay import CycleDay
 from .Period import Period
 from .School import School
 from .SchoolCourse import SchoolCourse

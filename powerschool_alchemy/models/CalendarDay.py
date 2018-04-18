@@ -12,6 +12,10 @@ class CalendarDay(Base):
             ['schoolid'],
             ['schools.school_number']
         ),
+        ForeignKeyConstraint(
+            ['cycle_day_id'],
+            ['cycle_day.id'],
+        ),
     )
 
     id = Column(Integer)
@@ -19,6 +23,8 @@ class CalendarDay(Base):
     date_value = Column(Date)
     school_id = Column('schoolid', Integer)
     in_session = Column('insession', Boolean)
+    cycle_day_id = Column(Integer)
+    cycle_day = relationship('CycleDay', viewonly=True)
 
     school = relationship('School')
 
