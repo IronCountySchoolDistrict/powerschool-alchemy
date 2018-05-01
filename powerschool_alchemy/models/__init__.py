@@ -5,6 +5,8 @@ from .Course import Course
 from .CC import CC
 from .Course import Course
 from .CycleDay import CycleDay
+from .Guardian import Guardian
+from .GuardianStudent import GuardianStudent
 from .Period import Period
 from .School import School
 from .SchoolCourse import SchoolCourse

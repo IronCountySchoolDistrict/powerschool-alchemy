@@ -39,15 +39,15 @@ class Student(Base):
     school = relationship('School')
     date_of_birth = Column('dob', Date)
     core_fields = relationship('StudentCoreField', uselist=False)
+    guardians = relationship('Guardian', secondary='GuardianStudent', back_populates='students')
 
     @property
     def full_name(self):
-        full_name = ''
-        full_name += self.first_name
         if self.middle_name:
-            full_name += ' ' + self.middle_name
-        full_name += ' ' + self.last_name
-        return full_name
+            fullname = '{} {} {}'.format(self.first_name, self.middle_name, self.last_name)
+        else:
+            fullname = '{} {}'.format(self.first_name, self.last_name)
+        return fullname
 
     def __repr__(self):
         return 'Student: ' + pformat(vars(self))
