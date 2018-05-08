@@ -1,22 +1,16 @@
 from pprint import pformat
 
-from sqlalchemy import (Column, Date, Float,
-                        ForeignKeyConstraint, Integer, String)
+from sqlalchemy import (Column, Date, Float, ForeignKeyConstraint, Integer, String)
 from sqlalchemy.orm import relationship
 from .base import Base
+from .GuardianStudent import GuardianStudent
 
 
 class Student(Base):
     __tablename__ = 'students'
     __table_args__ = (
-        ForeignKeyConstraint(
-            ['schoolid'],
-            ['schools.school_number']
-        ),
-        ForeignKeyConstraint(
-            ['dcid'],
-            ['studentcorefields.studentsdcid']
-        )
+        ForeignKeyConstraint('schoolid', 'schools.school_number'),
+        ForeignKeyConstraint('dcid', 'studentcorefields.studentsdcid'),
     )
 
     dcid = Column(Integer, primary_key=True)
@@ -39,7 +33,7 @@ class Student(Base):
     school = relationship('School')
     date_of_birth = Column('dob', Date)
     core_fields = relationship('StudentCoreField', uselist=False)
-    guardians = relationship('Guardian', secondary='GuardianStudent', back_populates='students')
+    guardians = relationship('GuardianStudent', back_populates='student')
 
     @property
     def full_name(self):

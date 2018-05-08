@@ -8,14 +8,8 @@ from .base import Base
 class StudentTestScore(Base):
     __tablename__ = 'studenttestscore'
     __table_args__ = (
-        ForeignKeyConstraint(
-            ['studenttestid'],
-            ['studenttest.id']
-        ),
-        ForeignKeyConstraint(
-            ['testscoreid'],
-            ['testscore.id']
-        ),
+        ForeignKeyConstraint('studenttestid', 'studenttest.id'),
+        ForeignKeyConstraint('testscoreid', 'testscore.id'),
     )
 
     id = Column(Integer)

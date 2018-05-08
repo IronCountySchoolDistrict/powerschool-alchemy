@@ -1,19 +1,13 @@
 from pprint import pformat
 
-from sqlalchemy import (Boolean, Column, Date,
-                        ForeignKeyConstraint, Integer, String)
+from sqlalchemy import (Boolean, Column, Date, ForeignKeyConstraint, Integer, String)
 from sqlalchemy.orm import relationship
 from .base import Base
 
 
 class Term(Base):
     __tablename__ = 'terms'
-    __table_args__ = (
-        ForeignKeyConstraint(
-            ['schoolid'],
-            ['schools.school_number']
-        ),
-    )
+    __table_args__ = (ForeignKeyConstraint('schoolid', 'schools.school_number'), )
 
     id = Column(Integer)
     year_id = Column('yearid', Integer)

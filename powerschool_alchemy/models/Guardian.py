@@ -5,14 +5,15 @@ from sqlalchemy.orm import relationship
 
 from .base import Base
 
-class Guardian(Base):
-    __tablename__ = 'Guardian'
 
-    account_id = Column('accountidentifier', Integer, primary_key=True)
+class Guardian(Base):
+    __tablename__ = 'guardian'
+
+    guardian_id = Column('guardianid', Integer, primary_key=True)
     first_name = Column('firstname', String)
     middle_name = Column('middlename', String)
     last_name = Column('lastname', String)
-    students = relationship('Student', secondary='GuardianStudent', back_populates='guardians')
+    students = relationship('GuardianStudent', back_populates='guardian')
 
     @property
     def full_name(self):
@@ -21,6 +22,6 @@ class Guardian(Base):
         else:
             fullname = '{} {}'.format(self.first_name, self.last_name)
         return fullname
-    
+
     def __repr__(self):
         return 'Guadian: ' + pformat(vars(self))
