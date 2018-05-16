@@ -7,7 +7,7 @@ from .base import Base
 
 class CycleDay(Base):
     __tablename__ = 'cycle_day'
-    __table_args__ = (ForeignKeyConstraint('schoolid', 'schools.school_number'), )
+    __table_args__ = (ForeignKeyConstraint(['schoolid'], ['schools.school_number']), )
 
     dcid = Column(Integer, primary_key=True)
     id = Column(Integer, unique=True)

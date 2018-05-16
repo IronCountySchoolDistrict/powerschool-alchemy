@@ -8,7 +8,7 @@ from .base import Base
 
 class Course(Base):
     __tablename__ = 'courses'
-    __table_args__ = (ForeignKeyConstraint('schoolid', 'schools.school_number'], )
+    __table_args__ = (ForeignKeyConstraint(['schoolid'], ['schools.school_number']), )
 
     id = Column(Integer)
     dcid = Column(Integer, primary_key=True)

@@ -13,8 +13,8 @@ class StudentTest(Base):
             ['termid', 'schoolid'], 
             ['terms.id', 'terms.schoolid']
         ),
-        ForeignKeyConstraint('studentid', 'students.id'),
-        ForeignKeyConstraint('testid', 'test.id'),
+        ForeignKeyConstraint(['studentid'], ['students.id']),
+        ForeignKeyConstraint(['testid'], ['test.id']),
     )
 
     id = Column(Integer)

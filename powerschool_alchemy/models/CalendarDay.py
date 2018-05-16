@@ -8,8 +8,8 @@ from .base import Base
 class CalendarDay(Base):
     __tablename__ = 'calendar_day'
     __table_args__ = (
-        ForeignKeyConstraint('schoolid', 'schools.school_number'),
-        ForeignKeyConstraint('cycle_day_id', 'cycle_day.id',
+        ForeignKeyConstraint(['schoolid'], ['schools.school_number']),
+        ForeignKeyConstraint(['cycle_day_id'], ['cycle_day.id'],
         ),
     )
 

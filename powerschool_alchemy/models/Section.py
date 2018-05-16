@@ -9,12 +9,9 @@ from .base import Base
 class Section(Base):
     __tablename__ = 'sections'
     __table_args__ = (
-        ForeignKeyConstraint('course_number', 'courses.course_number'),
-        ForeignKeyConstraint(
-            ['termid', 'schoolid'], 
-            ['terms.id', 'terms.schoolid']
-        ),
-        ForeignKeyConstraint('schoolid', 'schools.school_number'),
+        ForeignKeyConstraint(['course_number'], ['courses.course_number']),
+        ForeignKeyConstraint(['termid', 'schoolid'], ['terms.id', 'terms.schoolid']),
+        ForeignKeyConstraint(['schoolid'], ['schools.school_number']),
     )
 
     dcid = Column(Integer, primary_key=True)

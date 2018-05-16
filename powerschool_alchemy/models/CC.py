@@ -9,8 +9,8 @@ from .base import Base
 class CC(Base):
     __tablename__ = 'cc'
     __table_args__ = (
-        ForeignKeyConstraint('studentid', 'students.id'),
-        ForeignKeyConstraint('schoolid', 'schools.school_number'),
+        ForeignKeyConstraint(['studentid'], ['students.id']),
+        ForeignKeyConstraint(['schoolid'], ['schools.school_number']),
         ForeignKeyConstraint(
             ['termid', 'schoolid'], 
             ['terms.id', 'terms.schoolid']),

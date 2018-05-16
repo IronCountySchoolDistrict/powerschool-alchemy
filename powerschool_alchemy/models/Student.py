@@ -9,8 +9,8 @@ from .GuardianStudent import GuardianStudent
 class Student(Base):
     __tablename__ = 'students'
     __table_args__ = (
-        ForeignKeyConstraint('schoolid', 'schools.school_number'),
-        ForeignKeyConstraint('dcid', 'studentcorefields.studentsdcid'),
+        ForeignKeyConstraint(['schoolid'], ['schools.school_number']),
+        ForeignKeyConstraint(['dcid'], ['studentcorefields.studentsdcid']),
     )
 
     dcid = Column(Integer, primary_key=True)
