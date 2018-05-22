@@ -9,18 +9,11 @@ from .base import Base
 class SchoolCourse(Base):
     __tablename__ = 'school_course'
     __table_args__ = (
+        ForeignKeyConstraint(['schoolid'], ['schools.school_number']),
+        ForeignKeyConstraint(['courseid'], ['courses.id']),
         ForeignKeyConstraint(
-            ['schoolid'],
-            ['schools.school_number']
-        ),
-        ForeignKeyConstraint(
-            ['courseid'],
-            ['courses.id']
-        ),
-        ForeignKeyConstraint(
-            ['schoolid', 'yearid'],
-            ['terms.schoolid', 'terms.yearid']
-        ),
+            ['schoolid', 'yearid'], 
+            ['terms.schoolid', 'terms.yearid']),
     )
 
     # id = Column(Integer, unique=True)
@@ -30,9 +23,12 @@ class SchoolCourse(Base):
     year_id = Column('yearid', Integer)
     status = Column('status', Integer)
 
-    term = relationship('Term',
-                        primaryjoin="and_(SchoolCourse.year_id==Term.year_id, SchoolCourse.school_id==Term.school_id, Term.is_year==True)",
-                        viewonly=True)
+    term = relationship(
+        'Term',
+        primaryjoin=
+        "and_(SchoolCourse.year_id==Term.year_id, SchoolCourse.school_id==Term.school_id, Term.is_year==True)",
+        viewonly=True
+    )
     school = relationship('School', viewonly=True)
     course = relationship('Course', back_populates='school_courses')
 

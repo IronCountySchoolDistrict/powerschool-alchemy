@@ -8,12 +8,7 @@ from .base import Base
 
 class TestScore(Base):
     __tablename__ = 'testscore'
-    __table_args__ = (
-        ForeignKeyConstraint(
-            ['testid'],
-            ['test.id']
-        ),
-    )
+    __table_args__ = (ForeignKeyConstraint(['testid'], ['test.id']), )
 
     id = Column(Integer)
     dcid = Column(Integer, primary_key=True)

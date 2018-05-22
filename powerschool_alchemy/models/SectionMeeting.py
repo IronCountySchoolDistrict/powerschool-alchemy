@@ -9,14 +9,8 @@ from .base import Base
 class SectionMeeting(Base):
     __tablename__ = 'section_meeting'
     __table_args__ = (
-        ForeignKeyConstraint(
-            ['schoolid'],
-            ['schools.school_number'],
-        ),
-        ForeignKeyConstraint(
-            ['sectionid'],
-            ['sections.id'],
-        ),
+        ForeignKeyConstraint(['schoolid'], ['schools.school_number']),
+        ForeignKeyConstraint(['sectionid'], ['sections.id']),
         ForeignKeyConstraint(
             ['schoolid', 'cycle_day_letter', 'year_id'],
             ['cycle_day.schoolid', 'cycle_day.letter', 'cycle_day.year_id']

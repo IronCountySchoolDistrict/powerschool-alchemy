@@ -10,17 +10,11 @@ class StudentTest(Base):
     __tablename__ = 'studenttest'
     __table_args__ = (
         ForeignKeyConstraint(
-            ['termid', 'schoolid'],
+            ['termid', 'schoolid'], 
             ['terms.id', 'terms.schoolid']
         ),
-        ForeignKeyConstraint(
-            ['studentid'],
-            ['students.id']
-        ),
-        ForeignKeyConstraint(
-            ['testid'],
-            ['test.id']
-        ),
+        ForeignKeyConstraint(['studentid'], ['students.id']),
+        ForeignKeyConstraint(['testid'], ['test.id']),
     )
 
     id = Column(Integer)
@@ -33,8 +27,7 @@ class StudentTest(Base):
     term = relationship('Term')
     student = relationship('Student')
     test = relationship('Test')
-    student_test_scores = relationship(
-        'StudentTestScore', back_populates='student_test')
+    student_test_scores = relationship('StudentTestScore', back_populates='student_test')
 
     def __repr__(self):
         return 'StudentTest: ' + pformat(vars(self))

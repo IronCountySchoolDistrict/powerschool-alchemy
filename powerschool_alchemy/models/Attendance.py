@@ -9,22 +9,10 @@ from .base import Base
 class Attendance(Base):
     __tablename__ = 'attendance'
     __table_args__ = (
-        ForeignKeyConstraint(
-            ['ccid'],
-            ['cc.id']
-        ),
-        ForeignKeyConstraint(
-            ['studentid'],
-            ['students.id']
-        ),
-        ForeignKeyConstraint(
-            ['attendance_codeid'],
-            ['attendance_code.id']
-        ),
-        ForeignKeyConstraint(
-            ['periodid'],
-            ['period.id']
-        ),
+        ForeignKeyConstraint(['ccid'], ['cc.id']),
+        ForeignKeyConstraint(['studentid'], ['students.id']),
+        ForeignKeyConstraint(['attendance_codeid'], ['attendance_code.id']),
+        ForeignKeyConstraint(['periodid'], ['period.id']),
     )
 
     dcid = Column(Integer, primary_key=True)

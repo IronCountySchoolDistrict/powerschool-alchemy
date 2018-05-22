@@ -8,12 +8,7 @@ from .base import Base
 
 class Period(Base):
     __tablename__ = 'period'
-    __table_args__ = (
-        ForeignKeyConstraint(
-            ['schoolid'],
-            ['schools.school_number']
-        ),
-    )
+    __table_args__ = (ForeignKeyConstraint(['schoolid'], ['schools.school_number']), )
 
     dcid = Column(Integer, primary_key=True)
     id = Column(Integer, unique=True)

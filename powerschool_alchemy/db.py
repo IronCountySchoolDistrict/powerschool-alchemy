@@ -1,10 +1,11 @@
 import os
+from pprint import pprint
+
+from dotenv import find_dotenv, load_dotenv
 
 from sqlalchemy import create_engine
 from sqlalchemy.engine.url import URL
-from sqlalchemy.orm import sessionmaker, Session
-from pprint import pprint
-from dotenv import load_dotenv, find_dotenv
+from sqlalchemy.orm import Session, sessionmaker
 
 load_dotenv(find_dotenv(usecwd=True))
 
