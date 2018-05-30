@@ -1,6 +1,6 @@
 from pprint import pformat
 
-from sqlalchemy import (Column, ForeignKeyConstraint, Integer, String)
+from sqlalchemy import (Column, ForeignKeyConstraint, Integer, String, Boolean)
 from sqlalchemy.orm import relationship
 
 from .base import Base
@@ -20,6 +20,8 @@ class Teacher(Base):
     school = relationship('School')
     status = Column(Integer)
     email_address = Column('email_addr', String)
+    ps_access = Column('psaccess', Boolean)
+    pt_access = Column('ptaccess', Boolean)
 
     def __repr__(self):
         return 'Teacher: ' + pformat(vars(self))
