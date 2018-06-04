@@ -29,6 +29,7 @@ class Student(Base):
     father = Column(String)
     mother = Column(String)
     home_phone = Column(String)
+    home_room = Column(String)
     school_id = Column('schoolid', Integer)
     school = relationship('School')
     date_of_birth = Column('dob', Date)
