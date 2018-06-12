@@ -22,6 +22,7 @@ class Teacher(Base):
     email_address = Column('email_addr', String)
     ps_access = Column('psaccess', Boolean)
     pt_access = Column('ptaccess', Boolean)
+    users_dcid = Column(Integer)
 
     def __repr__(self):
         return 'Teacher: ' + pformat(vars(self))
