@@ -3,19 +3,6 @@
         "hash": {
             "sha256": "b09fda7765d3ed8e3c185d2739ca14d2ef5164852386a44b0302df7dbb4698e3"
         },
-        "host-environment-markers": {
-            "implementation_name": "cpython",
-            "implementation_version": "3.6.4",
-            "os_name": "posix",
-            "platform_machine": "x86_64",
-            "platform_python_implementation": "CPython",
-            "platform_release": "17.5.0",
-            "platform_system": "Darwin",
-            "platform_version": "Darwin Kernel Version 17.5.0: Fri Apr 13 19:32:32 PDT 2018; root:xnu-4570.51.2~1/RELEASE_X86_64",
-            "python_full_version": "3.6.4",
-            "python_version": "3.6",
-            "sys_platform": "darwin"
-        },
         "pipfile-spec": 6,
         "requires": {
             "python_version": "3.6"
@@ -32,20 +19,21 @@
         "cx-oracle": {
             "hashes": [
                 "sha256:054066097483c603e68233b5a95a439c306d25b56e2661fefe32d5b717fd20a4",
+                "sha256:2352162b1511ce31943b83ded20e17fc06d41a479b75dea50ce918db91f6fd7c",
                 "sha256:26d848cc73c1c019fc7a9f3f6306aed6aabef8d29fc73d9c0f077f41421c7b76",
-                "sha256:6ca93c853e0dda0850b7259fcc851d884ec6657b1837ec264e4a434819dac040",
-                "sha256:e627310abf6bfab4e6f9d2063b208c77a914149e3f55d611ed0daff5b1165c07",
-                "sha256:cbfc1ae587629edbc67ffc17c48b6991e2e258acf7d1a44d5a3e479afd65798e",
                 "sha256:32495eaa7a7e3283cadb56c5eb14f345fae4b7be90aad20fc65260f61ef12537",
                 "sha256:3cd1921d4ac60c3ed4e5ca82e2b619d28b2fe53e920cef7448272ecfbe8dcb5d",
-                "sha256:ffa9f248a04b5e13b3faef389f1a0d19c4a1a073c598ac333039d16560f56647",
-                "sha256:4e2e9103abe1b553caf45e2d702600e22b7af8fc33f33259b2893acb7742ef50",
                 "sha256:4d3fc2918f088fdbb5ec7504cc40db2472a36ba84f6f44d3922bf61e4036c123",
-                "sha256:c64f6d0765bf73db2bfb4f2ae78aeb6ddbfd7c0f352441b88c81e841a64f1600",
+                "sha256:4e2e9103abe1b553caf45e2d702600e22b7af8fc33f33259b2893acb7742ef50",
                 "sha256:58eeb7c227ab7f5ac77127872a578ee7ac2d64883e98b4c1b9aea4dd4f177d5f",
-                "sha256:2352162b1511ce31943b83ded20e17fc06d41a479b75dea50ce918db91f6fd7c",
-                "sha256:879233f07103474eed49513c3170539f4805f5ac9dbd5dfb7f370304a5910008"
+                "sha256:6ca93c853e0dda0850b7259fcc851d884ec6657b1837ec264e4a434819dac040",
+                "sha256:879233f07103474eed49513c3170539f4805f5ac9dbd5dfb7f370304a5910008",
+                "sha256:c64f6d0765bf73db2bfb4f2ae78aeb6ddbfd7c0f352441b88c81e841a64f1600",
+                "sha256:cbfc1ae587629edbc67ffc17c48b6991e2e258acf7d1a44d5a3e479afd65798e",
+                "sha256:e627310abf6bfab4e6f9d2063b208c77a914149e3f55d611ed0daff5b1165c07",
+                "sha256:ffa9f248a04b5e13b3faef389f1a0d19c4a1a073c598ac333039d16560f56647"
             ],
+            "index": "pypi",
             "version": "==6.3.1"
         },
         "python-dotenv": {
@@ -53,13 +41,15 @@
                 "sha256:4965ed170bf51c347a89820e8050655e9c25db3837db6602e906b6d850fad85c",
                 "sha256:509736185257111613009974e666568a1b031b028b61b500ef1ab4ee780089d5"
             ],
+            "index": "pypi",
             "version": "==0.8.2"
         },
         "sqlalchemy": {
             "hashes": [
-                "sha256:2d5f08f714a886a1382c18be501e614bce50d362384dc089474019ce0768151c"
+                "sha256:11ead7047ff3f394ed0d4b62aded6c5d970a9b718e1dc6add9f5e79442cc5b14"
             ],
-            "version": "==1.2.8"
+            "index": "pypi",
+            "version": "==1.3.0"
         }
     },
     "develop": {}
